@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="276.0" prefWidth="471.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.PlayersController">
+   <children>
+      <ImageView fitHeight="329.0" fitWidth="471.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/Fondo2.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="98.0" fitWidth="293.0" layoutX="204.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/avengers.png" />
+         </image>
+      </ImageView>
+      <ListView fx:id="listUsers" layoutX="14.0" layoutY="45.0" prefHeight="210.0" prefWidth="184.0" />
+      <Button layoutX="272.0" layoutY="112.0" mnemonicParsing="false" onAction="#ordenar1" prefHeight="26.0" prefWidth="159.0" style="-fx-background-radius: 90;" text="Por nombre" />
+      <Button layoutX="271.0" layoutY="144.0" mnemonicParsing="false" onAction="#ordenar2" prefHeight="26.0" prefWidth="159.0" style="-fx-background-radius: 90;" text="Por puntos" />
+      <Button layoutX="270.0" layoutY="176.0" mnemonicParsing="false" onAction="#ordenar3" prefHeight="26.0" prefWidth="159.0" style="-fx-background-radius: 90;" text="Por mejor partida" />
+      <Button layoutX="270.0" layoutY="208.0" mnemonicParsing="false" onAction="#ordenar4" prefHeight="26.0" prefWidth="159.0" style="-fx-background-radius: 90;" text="Por ultima partida" />
+      <ImageView fitHeight="38.0" fitWidth="39.0" onMouseClicked="#backToMenu" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/home.png" />
+         </image>
+      </ImageView>
+      <Button layoutX="272.0" layoutY="240.0" mnemonicParsing="false" onAction="#ordenar5" prefHeight="26.0" prefWidth="159.0" style="-fx-background-radius: 90;" text="Por primer partida" />
+   </children>
+</AnchorPane>

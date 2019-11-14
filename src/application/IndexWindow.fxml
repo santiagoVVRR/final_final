@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="336.0" prefWidth="597.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.IndexController">
+   <children>
+      <ImageView fitHeight="336.0" fitWidth="606.0" opacity="0.63" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/Fondo1.jpg" />
+         </image>
+      </ImageView>
+      <Button layoutX="2.0" layoutY="1.0" mnemonicParsing="false" style="-fx-background-color: reansparent;" />
+      <Label layoutX="55.0" layoutY="32.0" prefHeight="28.0" prefWidth="501.0" text="¡ESCOGE EL CAMPO EN EL QUE DESEAS JUGAR!">
+         <font>
+            <Font name="Comic Sans MS Bold" size="20.0" />
+         </font>
+      </Label>
+      <ImageView fx:id="field1" fitHeight="92.0" fitWidth="120.0" layoutX="206.0" layoutY="62.0" pickOnBounds="true" preserveRatio="true" />
+      <Label layoutX="19.0" layoutY="169.0" prefHeight="28.0" prefWidth="565.0" text="¡ESCOGE EL PERSONAJE CON EL QUE DESEAS JUGAR!">
+         <font>
+            <Font name="Comic Sans MS Bold" size="20.0" />
+         </font>
+      </Label>
+      <ImageView fx:id="character1" fitHeight="92.0" fitWidth="120.0" layoutX="240.0" layoutY="203.0" onMouseClicked="#selectCharacter" pickOnBounds="true" preserveRatio="true" />
+      <Button layoutX="266.0" layoutY="304.0" mnemonicParsing="false" onAction="#play" prefHeight="26.0" prefWidth="48.0" style="-fx-background-radius: 90; -fx-background-color: #021e71;" text="Play" textFill="WHITE" />
+      <ImageView fx:id="leftArrowField" fitHeight="48.0" fitWidth="71.0" layoutX="128.0" layoutY="98.0" onMouseClicked="#showPreviousField" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/arrow-left.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="32.0" fitWidth="34.0" layoutX="1.0" layoutY="1.0" onMouseClicked="#backToMenu" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/home.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="rightArrowField" fitHeight="54.0" fitWidth="48.0" layoutX="366.0" layoutY="98.0" onMouseClicked="#showNextField" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/arrow-right.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="rightArrowCharacter" fitHeight="54.0" fitWidth="48.0" layoutX="390.0" layoutY="218.0" onMouseClicked="#showNextCharacter" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/arrow-right.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="leftArrowCharacter" fitHeight="48.0" fitWidth="71.0" layoutX="128.0" layoutY="218.0" onMouseClicked="#showPreviousCharacter" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/arrow-left.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="field1" fitHeight="92.0" fitWidth="120.0" layoutX="216.0" layoutY="72.0" onMouseClicked="#selectField" pickOnBounds="true" preserveRatio="true" />
+   </children>
+</AnchorPane>
