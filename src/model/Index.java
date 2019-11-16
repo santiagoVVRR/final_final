@@ -15,6 +15,8 @@ import java.sql.Savepoint;
 import java.util.ArrayList;
 import java.util.Comparator;
 
+import exceptions.*;
+
 public class Index implements Comparator<User>{
 
 	//Attributes
@@ -34,9 +36,9 @@ public class Index implements Comparator<User>{
 		}else {
 			users = recoverUsers();
 		}
-		loadCharacter();
-		loadFiles();
-		circularListOfCharacters();
+		loadCharactersFile();
+		loadFieldsFile();
+		charactersCircularList();
 		characterChoose = upCharacter;
 		fieldChoose = upField;
 	}
@@ -99,7 +101,7 @@ public class Index implements Comparator<User>{
 		this.fieldChoose = this.fieldChoose.getPrev();
 	}
 	
-	public void registerUsers(String name) {
+	public void registerUsers(String name) throws UserIsAlreadyTaken, NickNameIsNotValid{
 		if(name.length() < 3) {
 			throw new NickNameIsNotValid();
 		}
@@ -234,7 +236,7 @@ public class Index implements Comparator<User>{
 				String name = line[2];
 				String image = line[3];
 				Character c1 = new Character(life,power,name,image);
-				saveCharacter(c1,this.upCharacter,null);
+				saveCharactersList(c1,this.upCharacter,null);
 			}
 			br.close();
 		}catch(FileNotFoundException e) {
@@ -254,7 +256,7 @@ public class Index implements Comparator<User>{
 				String name = line[0];
 				String image = line[1];
 				Field f = new Field(name,image);
-				saveField(f,this.upField,null);
+				saveFiedlList(f,this.upField,null);
 			}
 			br.close();
 		} catch (FileNotFoundException e) {
