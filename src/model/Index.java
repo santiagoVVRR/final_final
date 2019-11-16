@@ -41,6 +41,64 @@ public class Index implements Comparator<User>{
 		fieldChoose = upField;
 	}
 	
+	public ArrayList<User> getUsers() {
+		return users;
+	}
+
+	public void setUsers(ArrayList<User> users) {
+		this.users = users;
+	}
+
+	public Field getUpField() {
+		return upField;
+	}
+
+	public void setUpField(Field upField) {
+		this.upField = upField;
+	}
+
+	public Character getUpCharacter() {
+		return upCharacter;
+	}
+
+	public void setUpCharacter(Character upCharacter) {
+		this.upCharacter = upCharacter;
+	}
+
+	public User getUserChoose() {
+		return userChoose;
+	}
+
+	public void setUserChoose(User userChoose) {
+		this.userChoose = userChoose;
+	}
+	
+	public Field visualizeNextField(Field current) {
+		return current.getNext();
+	}
+	
+	public Character visualizePrevCharacter(Character current) {
+		return current.getPrev();
+	}
+	
+	
+	
+	public void visualizeNextCharacter() {
+		this.characterChoose = this.characterChoose.getNext();
+	}
+	
+	public void visualizePrevCharacter() {
+		this.characterChoose = this.characterChoose.getPrev();
+	}
+	
+	public void visualizeNextField() {
+		this.fieldChoose = this.fieldChoose.getNext();
+	}
+	
+	public void visualizePrevField() {
+		this.fieldChoose = this.fieldChoose.getPrev();
+	}
+	
 	public void registerUsers(String name) {
 		if(name.length() < 3) {
 			throw new NickNameIsNotValid();
@@ -295,31 +353,7 @@ public class Index implements Comparator<User>{
 		upField.setPrev(previous);
 	}
 	
-	public Field visualizeNextField(Field current) {
-		return current.getNext();
-	}
 	
-	public Character visualizePrevCharacter(Character current) {
-		return current.getPrev();
-	}
-	
-	
-	
-	public void visualizeNextCharacter() {
-		this.characterChoose = this.characterChoose.getNext();
-	}
-	
-	public void visualizePrevCharacter() {
-		this.characterChoose = this.characterChoose.getPrev();
-	}
-	
-	public void visualizeNextField() {
-		this.fieldChoose = this.fieldChoose.getNext();
-	}
-	
-	public void visualizePrevField() {
-		this.fieldChoose = this.fieldChoose.getPrev();
-	}
 	
 	
 	public void selectedCharacter(boolean s) throws NotChoosenCharacter{
@@ -447,37 +481,7 @@ public class Index implements Comparator<User>{
 	
 	
 	
-	public ArrayList<User> getUsers() {
-		return users;
-	}
-
-	public void setUsers(ArrayList<User> users) {
-		this.users = users;
-	}
-
-	public Field getUpField() {
-		return upField;
-	}
-
-	public void setUpField(Field upField) {
-		this.upField = upField;
-	}
-
-	public Character getUpCharacter() {
-		return upCharacter;
-	}
-
-	public void setUpCharacter(Character upCharacter) {
-		this.upCharacter = upCharacter;
-	}
-
-	public User getUserChoose() {
-		return userChoose;
-	}
-
-	public void setUserChoose(User userChoose) {
-		this.userChoose = userChoose;
-	}
+	
 
 	public void userChoosenInfo(String d) throws UserNull{
 		String[] info = d.split("\t");
