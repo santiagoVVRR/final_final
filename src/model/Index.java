@@ -3,11 +3,13 @@ package model;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.sql.Savepoint;
 import java.util.ArrayList;
@@ -241,7 +243,7 @@ public class Index implements Comparator<User>{
 	public void saveCharactersList(Character c, Character current, Character previous) {
 		if(upCharacter != null) {
 			if(upCharacter.getPrev() != null) {
-				notCircularListField();
+				notCircularListCharacter();
 			}
 		}
 		if(this.upCharacter == null) {
@@ -349,12 +351,151 @@ public class Index implements Comparator<User>{
 		}
 	}
 	
+	public ArrayList<User> recoverUsers(){
+		ArrayList<User> a = null;
+		try {
+			ObjectInputStream ois = new ObjectInputStream(new FileInputStream("data/Users.dat"));
+			a = (ArrayList<User>) ois.readObject();
+			ois.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return a;
+	}
 	
+	
+	
+	
+	public Character getCharacterChoose() {
+		return characterChoose;
+	}
+
+	public void setCharacterChoose(Character characterChoose) {
+		this.characterChoose = characterChoose;
+	}
+
+	public Field getFieldChoose() {
+		return fieldChoose;
+	}
+
+	public void setFieldChoose(Field fieldChoose) {
+		this.fieldChoose = fieldChoose;
+	}
+
+	/*
+	 * makes the circular list into a non circular list
+	 */
+	public void notCircularListCharacter(){
+		upCharacter.getPrev().setNext(null);
+		upCharacter.setPrev(null);
+	}
+	
+	public void notCircularListField() {
+		upField.getPrev().setNext(null);
+		upField.setPrev(null);
+	}
+	
+	
+	public Character searchCharacterByName(String name) throws CharacterNull{
+		Character c = null;
+		if(upCharacter != null) {
+			if(upCharacter.getPrev() != null) {
+				notCircularListCharacter();
+			}
+			c = upCharacter.searchCharacterByName(name);
+		}else {
+			c = null;
+		}
+		charactersCircularList();
+		if(c == null) {
+			throw new CharacterNull();
+		}
+		return c;
+	}
+	
+	public User searchUsersByName(String name) throws UserNull{
+		sortUsersByNameBubble();
+		User u = null;
+		boolean found = false;
+		int first = 0;
+		int last = users.size()-1;
+		int mid;
+		while(first <= last && !found) {
+			mid = (first + last) / 2;
+			if(users.get(mid).getName().compareToIgnoreCase(name) == 0) {
+				u = users.get(mid);
+				found = true;
+			}else if(users.get(mid).getName().compareToIgnoreCase(name)< 0) {
+				first = mid+1;
+			}else {
+				last = mid-1;
+			}
+		}
+		if(u == null) {
+			throw new UserNull();
+		}
+		return u;
+	}
+	
+	public Field searchFieldByName(String name) {
+		if(upField == null) {
+			return null;
+		}else {
+			return upField.searchField(name);
+		}
+	}
+	
+	
+	
+	public ArrayList<User> getUsers() {
+		return users;
+	}
+
+	public void setUsers(ArrayList<User> users) {
+		this.users = users;
+	}
+
+	public Field getUpField() {
+		return upField;
+	}
+
+	public void setUpField(Field upField) {
+		this.upField = upField;
+	}
+
+	public Character getUpCharacter() {
+		return upCharacter;
+	}
+
+	public void setUpCharacter(Character upCharacter) {
+		this.upCharacter = upCharacter;
+	}
+
+	public User getUserChoose() {
+		return userChoose;
+	}
+
+	public void setUserChoose(User userChoose) {
+		this.userChoose = userChoose;
+	}
+
+	public void userChoosenInfo(String d) throws UserNull{
+		String[] info = d.split("\t");
+		String name = info[0];
+		userChoose = searchUsersByName(name);
+	}
 	
 	@Override
-	public int compare(User arg0, User arg1) {
-		// TODO Auto-generated method stub
-		return 0;
+	public int compare(User u1, User u2) {
+		int comp;
+		if(u1.getScore() < u2.getScore()) {
+			comp = -1;
+		}else if(u1.getScore() > u2.getScore()) {
+			comp = 1;
+		}else {
+			comp = 0;
+		}
+		return comp;
 	}
 	
 }
