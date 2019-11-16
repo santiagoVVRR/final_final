@@ -256,14 +256,14 @@ public class Character implements Comparable<Character>, Movement{
 		}
 	}
 	
-	public Character searchCharacterByName(String n) {
+	public Character searchCharacterByName(String name) {
 		Character ret = null;
 		
-		if(this.nickName.equalsIgnoreCase(n)) {
+		if(this.nickName.equalsIgnoreCase(name)) {
 			ret = this;
 		}else {
 			if(this.next != null) {
-				ret = this.next.searchCharacterByName(n);
+				ret = this.next.searchCharacterByName(name);
 			}
 		}
 		return ret;
