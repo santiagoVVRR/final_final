@@ -1,1 +1,4 @@
 Stone 0 1
+Stone 1 2
+Stone 2 3
+Stone 3 4
