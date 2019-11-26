@@ -218,7 +218,7 @@ public class Field implements Comparable<Field>{
 	public void loadStones() {
 		FileWriter fo;
 		try {
-			fo = new FileWriter("files/Stones.txt");
+			fo = new FileWriter("data/Stones.txt");
 			BufferedWriter b = new BufferedWriter(fo);
 			int i = 0;
 			while(i < showListOfStones().size()) {

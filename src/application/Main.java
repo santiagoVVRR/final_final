@@ -14,18 +14,17 @@ public class Main extends Application {
 	//Static relationship between model and controllers
 	//All controllers are going to call it using Main.getIndexModel()
 	private static Index indexModel;
-	//
-	//
+	
 	@Override
 	public void start(Stage primaryStage) {
 		try {
-			FXMLLoader loader = new FXMLLoader();
-			loader.setLocation(Main.class.getResource("/application/MenuWindow.fxml"));
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("Menu.fxml"));
 			Parent root = loader.load();
 			Scene scene = new Scene(root);
 			primaryStage.setScene(scene);
-			primaryStage.setTitle("Avengers");
+			primaryStage.setTitle("MINECRAFT ICESI MODE");
 			primaryStage.getIcons().add(new Image("/images/logo.png"));
+			primaryStage.setResizable(false);
 			primaryStage.show();
 		} catch(Exception e) {
 			e.printStackTrace();
