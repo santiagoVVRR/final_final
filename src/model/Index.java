@@ -11,7 +11,6 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
-import java.sql.Savepoint;
 import java.util.ArrayList;
 import java.util.Comparator;
 
@@ -30,7 +29,7 @@ public class Index implements Comparator<User>{
 	
 	
 	public Index() {
-		File f = new File("files/Users.dat");
+		File f = new File("data/Users.dat");
 		if(f.exists() == false) {
 			users = new ArrayList<User>();
 		}else {
@@ -102,7 +101,7 @@ public class Index implements Comparator<User>{
 	}
 	
 	public void registerUsers(String name) throws UserIsAlreadyTaken, NickNameIsNotValid{
-		if(name.length() < 3) {
+		if(name.length() < 4) {
 			throw new NickNameIsNotValid();
 		}
 		for(int i = 0; i < users.size(); i++) {

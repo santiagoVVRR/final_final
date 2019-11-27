@@ -74,11 +74,11 @@ public class IndexControllerClass implements Initializable{
     		}
     		Main.getIndexModel().selectedField(true);
     		Main.getIndexModel().selectedCharacter(true);
-    		FXMLLoader loader = new FXMLLoader(getClass().getResource("Game.fxml"));
+    		FXMLLoader loader = new FXMLLoader(getClass().getResource("/application/Game.fxml"));
     		Parent root = loader.load();
     		Scene scene = new Scene(root);
     		Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-    		GameControllerClass game = (GameControllerClass) loader.getController();
+    		//GameControllerClass game = (GameControllerClass) loader.getController();
     		//game;
     		stage.setScene(scene);
     		stage.show();
@@ -133,19 +133,10 @@ public class IndexControllerClass implements Initializable{
     	rightMap.setDisable(true);
     }
 
-    @FXML
-    void initialize() {
-        assert mapPicture != null : "fx:id=\"mapPicture\" was not injected: check your FXML file 'Index.fxml'.";
-        assert characterPicture != null : "fx:id=\"characterPicture\" was not injected: check your FXML file 'Index.fxml'.";
-        assert leftMap != null : "fx:id=\"leftMap\" was not injected: check your FXML file 'Index.fxml'.";
-        assert rightMap != null : "fx:id=\"rightMap\" was not injected: check your FXML file 'Index.fxml'.";
-        assert leftCharacter != null : "fx:id=\"leftCharacter\" was not injected: check your FXML file 'Index.fxml'.";
-        assert rightCharacter != null : "fx:id=\"rightCharacter\" was not injected: check your FXML file 'Index.fxml'.";
-
-    }
+   
 
 	@Override
-	public void initialize(URL location, ResourceBundle resources) {
+	public void initialize(URL arg0, ResourceBundle arg1) {
 		characterPicture.setImage(new Image(Main.getIndexModel().getUpCharacter().getImage()));
 		mapPicture.setImage(new Image(Main.getIndexModel().getUpField().getImage()));
 		

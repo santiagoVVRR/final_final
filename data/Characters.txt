@@ -1,1 +1,9 @@
-500;250;Steve;/images/steve.png
+500;250;Steve;/images/steve-Skin.png
+500;250;AlexBy11;/images/alexby11-Skin.png
+500;250;Cheeto;/images/cheeto-Skin.png
+500;250;Chicken;/images/chicken-Skin.png
+500;250;Luzu;/images/luzu-Skin.png
+500;250;Mangel;/images/mangel-Skin.png
+500;250;RubiusOMG;/images/rubius-Skin.png
+500;250;Suit;/images/suit-Skin.png
+500;250;Vegetta777;/images/vegetta-Skin.png

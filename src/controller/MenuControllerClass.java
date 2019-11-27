@@ -39,19 +39,24 @@ public class MenuControllerClass {
     		try {
     			String name = r.get();
     			Main.getIndexModel().registerUsers(name);
-				FXMLLoader loader = new FXMLLoader(getClass().getResource("Index.fxml"));
+				FXMLLoader loader = new FXMLLoader(getClass().getResource("/application/Index.fxml"));
 				Parent root = loader.load();
 				Scene scene = new Scene(root);
 				Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
 				stage.setTitle("INDEX GAME");
 				stage.setScene(scene);
 				stage.show();
-			} catch (UserIsAlreadyTaken | NickNameIsNotValid e) {
+			} catch (NickNameIsNotValid e) {
 				Alert alert = new Alert(AlertType.ERROR);
 				alert.setContentText(e.getMessage());
+				alert.show();
 			} catch(IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
+			}catch(UserIsAlreadyTaken e) {
+				Alert alert = new Alert(AlertType.ERROR);
+				alert.setContentText(e.getMessage());
+				alert.show();
 			}
     		
     	}
