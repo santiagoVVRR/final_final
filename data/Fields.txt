@@ -2,4 +2,4 @@ Cabaña;/images/cabaña.jpg
 Cave;/images/cave.png
 Forest;/images/forest.png
 Desert;/images/desert.png
-Snow;/images/snow.png
+Snow;/images/snow.jpg
