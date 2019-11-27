@@ -137,7 +137,7 @@ public class IndexControllerClass implements Initializable{
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
-		//System.out.println(Main.getIndexModel().getUpField().getImage());
+		//System.out.println(Main.getIndexModel().getUpField().getImage());esto lo hice para ver si estaba recibiendo los valores correctos
 		characterPicture.setImage(new Image((String)Main.getIndexModel().getUpCharacter().getImage()));
 		mapPicture.setImage(new Image(Main.getIndexModel().getUpField().getImage()));
 		
