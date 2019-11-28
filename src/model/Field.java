@@ -196,12 +196,18 @@ public class Field implements Comparable<Field>{
 		}
 	}
 	
+	public Stone searchStone(int power) {
+		if(this.rootStone == null) {
+			return null;
+		}else {
+			return rootStone.searchStone(power);
+		}
+	}
 	
 	public ArrayList<Stone> showListOfStones(){
 		ArrayList<Stone> o = new ArrayList<>();
-		if(rootStone == null) {
+		if(rootStone == null) 
 			rootStone.showStonesList(o);
-		}
 		return o;
 	}
 	

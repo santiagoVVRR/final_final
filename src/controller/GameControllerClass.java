@@ -146,11 +146,11 @@ public class GameControllerClass implements Initializable{
 			if(alive) {
 				takeStone();
 			}else {
-				
+				//lose();
 			}if(win) {
 				win();
 			}
-		}),new KeyFrame(Duration.millis(20)));
+		}),new KeyFrame(Duration.millis(30)));
 		
 		regularThread.setCycleCount(Animation.INDEFINITE);
 		regularThread.play();
@@ -163,7 +163,7 @@ public class GameControllerClass implements Initializable{
 			}if(win){
 				trapThread.stop();
 			}
-		}),new KeyFrame(Duration.millis(20)));
+		}),new KeyFrame(Duration.millis(30)));
 		
 		trapThread.setCycleCount(Animation.INDEFINITE);
 		trapThread.play();
@@ -241,7 +241,7 @@ public class GameControllerClass implements Initializable{
 		int min = Integer.parseInt(aux[0]);
 		c = (min*60)+sec;
 		Alert a = new Alert(AlertType.INFORMATION);
-		a.setContentText("SCORE. "+(100-c));
+		a.setContentText("SCORE: "+(100-c));
 		a.show();
 		btnHome.setVisible(true);
 	}
@@ -273,24 +273,24 @@ public class GameControllerClass implements Initializable{
 		tt.start();
 	}
 	
-	public void trapsGenerator() {
+	private void trapsGenerator() {
 		//Poison
 		URL poison = getClass().getResource("/images/poison.png");
 		Image veneno = new Image(poison.toString(),50,50,false,true);
 		
 		//Enemys
-		URL pompom = getClass().getResource("/images/creeper.png");
-		Image creeper = new Image(pompom.toString(),50,50,false,true);
+		//URL pompom = getClass().getResource("/images/creeper.png");
+		//Image creeper = new Image(pompom.toString(),50,50,false,true);
 		
 		URL araña = getClass().getResource("/images/spider.png");
 		Image spider = new Image(araña.toString(),50,50,false,true);
-		
+		/*
 		URL dead = getClass().getResource("/images/zombie.png");
 		Image zombie = new Image(dead.toString(),50,50,false,true);
 		
 		URL huesos = getClass().getResource("/images/esqueleto.png");
 		Image archer = new Image(huesos.toString(),50,50,false,true);
-		
+		*/
 		traps = Main.getIndexModel().getFieldChoose().getTraps();
 		for(int i = 0; i < traps.size(); i++) {
 			trapsImg.add(new ImageView());
@@ -298,16 +298,16 @@ public class GameControllerClass implements Initializable{
 			if(traps.get(i) instanceof Poison) {
 				trapsImg.get(i).setImage(veneno);
 			}else {
-				trapsImg.get(0).setImage(creeper);
-				trapsImg.get(1).setImage(spider);
-				trapsImg.get(2).setImage(zombie);
-				trapsImg.get(4).setImage(archer);
+			//	trapsImg.get(i).setImage(creeper);
+				trapsImg.get(i).setImage(spider);
+			//	trapsImg.get(2).setImage(zombie);
+			//	trapsImg.get(4).setImage(archer);
 			}
 		}
 		pane.getChildren().addAll(trapsImg);
 	}
 	
-	public void stonesGenerator() {
+	private void stonesGenerator() {
 		URL ss1 = getClass().getResource("/images/iron.png");
 		Image s1 = new Image(ss1.toString(),50,50,false,true);
 		
@@ -328,6 +328,7 @@ public class GameControllerClass implements Initializable{
 		stone = Main.getIndexModel().getFieldChoose().showListOfStones();
 		for(int  i = 0; i < stone.size(); i++) {
 			stonesImg.add(new ImageView());
+			
 		}
 		stonesImg.get(0).setImage(s1);
 		stonesImg.get(1).setImage(s2);
@@ -355,7 +356,7 @@ public class GameControllerClass implements Initializable{
 		Main.getIndexModel().getFieldChoose().loadStones();
 		map.setImage(new Image(Main.getIndexModel().getFieldChoose().getImage()));
 		ironImg.setOpacity(0.30);
-		goldImg.setOpacity(0-30);
+		goldImg.setOpacity(0.30);
 		emreldImg.setOpacity(0.30);
 		diamondImg.setOpacity(0.30);
 		player.setImage(new Image(Main.getIndexModel().getCharacterChoose().getImage()));
@@ -411,7 +412,7 @@ public class GameControllerClass implements Initializable{
 		});
 	}
 	
-	public void onKeyReleased(Scene s) {
+	private void onKeyReleased(Scene s) {
 		s.setOnKeyReleased(new EventHandler<KeyEvent>() {
 
 			@Override

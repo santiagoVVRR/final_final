@@ -214,7 +214,7 @@ public class Character implements Comparable<Character>, Movement{
 			}else {
 				this.posx = 0;
 			}
-		}if(up) {
+		}/*if(up) {
 			if(posy > 0) {
 				this.posy -= MOVEMENT_INDEX;
 			}
@@ -222,7 +222,7 @@ public class Character implements Comparable<Character>, Movement{
 			if(posy + 110 < LIMITY) {
 				this.posy += MOVEMENT_INDEX;
 			}
-		}
+		}*/
 		
 	}
 
