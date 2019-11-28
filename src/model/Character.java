@@ -240,7 +240,7 @@ public class Character implements Comparable<Character>, Movement{
 		return catched;
 	}
 	
-	private void grabbStone(Stone s) {
+	public void grabbStone(Stone s) {
 		if(rootStone == null) {
 			rootStone = s;
 		}else {

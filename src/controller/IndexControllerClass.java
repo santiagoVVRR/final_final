@@ -78,8 +78,8 @@ public class IndexControllerClass implements Initializable{
     		Parent root = loader.load();
     		Scene scene = new Scene(root);
     		Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-    		//GameControllerClass game = (GameControllerClass) loader.getController();
-    		//game;
+    		GameControllerClass game = (GameControllerClass) loader.getController();
+    		game.sceneRecived(scene);
     		stage.setScene(scene);
     		stage.show();
     	} catch (NotChoosenField e) {
