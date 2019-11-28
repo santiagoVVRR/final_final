@@ -321,19 +321,19 @@ public class GameControllerClass implements Initializable{
 		Image s4 = new Image(ss4.toString(),50,50,false,true);
 		
 		Main.getIndexModel().getFieldChoose().addStone(1);
-		Main.getIndexModel().getFieldChoose().addStone(4);
 		Main.getIndexModel().getFieldChoose().addStone(2);
 		Main.getIndexModel().getFieldChoose().addStone(3);
+		Main.getIndexModel().getFieldChoose().addStone(4);
 		
 		stone = Main.getIndexModel().getFieldChoose().showListOfStones();
 		for(int  i = 0; i < stone.size(); i++) {
 			stonesImg.add(new ImageView());
-			
+			stonesImg.get(0).setImage(s1);
+			stonesImg.get(1).setImage(s2);
+			stonesImg.get(2).setImage(s3);
+			stonesImg.get(3).setImage(s4);
 		}
-		stonesImg.get(0).setImage(s1);
-		stonesImg.get(1).setImage(s2);
-		stonesImg.get(2).setImage(s3);
-		stonesImg.get(3).setImage(s4);
+		
 		
 		pane.getChildren().addAll(stonesImg);
 	}
