@@ -328,12 +328,12 @@ public class GameControllerClass implements Initializable{
 		stone = Main.getIndexModel().getFieldChoose().showListOfStones();
 		for(int  i = 0; i < stone.size(); i++) {
 			stonesImg.add(new ImageView());
-			stonesImg.get(0).setImage(s1);
-			stonesImg.get(1).setImage(s2);
-			stonesImg.get(2).setImage(s3);
-			stonesImg.get(3).setImage(s4);
+			
 		}
-		
+		stonesImg.get(0).setImage(s1);
+		stonesImg.get(1).setImage(s2);
+		stonesImg.get(2).setImage(s3);
+		stonesImg.get(3).setImage(s4);
 		
 		pane.getChildren().addAll(stonesImg);
 	}
