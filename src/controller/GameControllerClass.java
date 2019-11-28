@@ -197,7 +197,7 @@ public class GameControllerClass implements Initializable{
 				trapsImg.get(i).setVisible(false);
 			}
 		}
-		if(!lifesImg.get(6).isVisible()) {
+		if(!lifesImg.get(5).isVisible()) {
 			alive = false;
 			System.out.println("perdiste por malo");
 		}
@@ -340,12 +340,12 @@ public class GameControllerClass implements Initializable{
 	
 	public void SceneInitializer() {
 		lifesImg = new ArrayList<>();
-		lifesImg.add(heart1);
-		lifesImg.add(heart2);
-		lifesImg.add(heart3);
-		lifesImg.add(heart4);
-		lifesImg.add(heart5);
-		lifesImg.add(heart6);
+		lifesImg.add(0,heart1);
+		lifesImg.add(1,heart2);
+		lifesImg.add(2,heart3);
+		lifesImg.add(3,heart4);
+		lifesImg.add(4,heart5);
+		lifesImg.add(5,heart6);
 		timer();
 		trapsImg = new ArrayList<>();
 		traps = new ArrayList<>();
