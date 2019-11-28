@@ -308,32 +308,31 @@ public class GameControllerClass implements Initializable{
 	}
 	
 	public void stonesGenerator() {
-		URL hierro = getClass().getResource("/images/Iron_Ingot.png");
-		Image iron = new Image(hierro.toString(),50,50,false,true);
+		URL ss1 = getClass().getResource("/images/iron.png");
+		Image s1 = new Image(ss1.toString(),50,50,false,true);
 		
-		URL oro = getClass().getResource("/images/gold_Ingot.png");
-		Image gold = new Image(oro.toString(),50,50,false,true);
+		URL ss2 = getClass().getResource("/images/gold.png");
+		Image s2 = new Image(ss2.toString(),50,50,false,true);
 		
-		URL esmeral = getClass().getResource("/images/Emerald.png");
-		Image emerald = new Image(esmeral.toString(),50,50,false,true);
+		URL ss3 = getClass().getResource("/images/Emerald.png");
+		Image s3 = new Image(ss3.toString(),50,50,false,true);
 		
-		URL diamante = getClass().getResource("/images/diamond.png");
-		Image diamond = new Image(diamante.toString(),50,50,false,true);
+		URL ss4 = getClass().getResource("/images/diamond.png");
+		Image s4 = new Image(ss4.toString(),50,50,false,true);
 		
 		Main.getIndexModel().getFieldChoose().addStone(1);
+		Main.getIndexModel().getFieldChoose().addStone(4);
 		Main.getIndexModel().getFieldChoose().addStone(2);
 		Main.getIndexModel().getFieldChoose().addStone(3);
-		Main.getIndexModel().getFieldChoose().addStone(4);
 		
 		stone = Main.getIndexModel().getFieldChoose().showListOfStones();
 		for(int  i = 0; i < stone.size(); i++) {
 			stonesImg.add(new ImageView());
 		}
-		
-		//stonesImg.get(0).setImage(iron);
-		stonesImg.get(1).setImage(gold);
-		stonesImg.get(2).setImage(emerald);
-		stonesImg.get(3).setImage(diamond);
+		stonesImg.get(0).setImage(s1);
+		stonesImg.get(1).setImage(s2);
+		stonesImg.get(2).setImage(s3);
+		stonesImg.get(3).setImage(s4);
 		
 		pane.getChildren().addAll(stonesImg);
 	}

@@ -6,7 +6,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Text?>
 
-
 <AnchorPane fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.GameControllerClass">
    <children>
       <ImageView fx:id="map" fitHeight="407.0" fitWidth="611.0" layoutX="-2.0" pickOnBounds="true" preserveRatio="true" />
@@ -53,12 +52,12 @@
       </ImageView>
       <ImageView fx:id="goldImg" fitHeight="29.0" fitWidth="22.0" layoutX="69.0" layoutY="43.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../images/gold_Ingot.png" />
+            <Image url="@../images/gold.png" />
          </image>
       </ImageView>
       <ImageView fx:id="ironImg" fitHeight="29.0" fitWidth="22.0" layoutX="98.0" layoutY="43.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../images/Iron_Ingot.png" />
+            <Image url="@../images/iron.png" />
          </image>
       </ImageView>
       <Button fx:id="btnHome" layoutX="534.0" layoutY="16.0" mnemonicParsing="false" onAction="#backHome" text="HOME" />
