@@ -380,7 +380,7 @@ public class GameControllerClass implements Initializable{
 				Main.getIndexModel().getCharacterChoose().move();
 				int x = Main.getIndexModel().getCharacterChoose().getPosx();
 				int y = Main.getIndexModel().getCharacterChoose().getPosy();
-				player.relocate(x, y);
+				player.relocate(x,y);
 			}
 		};
 		at.start();

@@ -204,7 +204,7 @@ public class Character implements Comparable<Character>, Movement{
 	
 		if(left) {
 			if(posx > 0) {
-				this.posx = MOVEMENT_INDEX;
+				this.posx -= MOVEMENT_INDEX;
 			}else {
 				this.posx = LIMITX;
 			}

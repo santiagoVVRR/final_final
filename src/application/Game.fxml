@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.GameControllerClass">
+<AnchorPane fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="534.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.GameControllerClass">
    <children>
       <ImageView fx:id="map" fitHeight="407.0" fitWidth="611.0" layoutX="-2.0" pickOnBounds="true" preserveRatio="true" />
       <ImageView fx:id="player" fitHeight="126.0" fitWidth="98.0" layoutX="245.0" layoutY="260.0" pickOnBounds="true" preserveRatio="true" />
@@ -60,7 +60,7 @@
             <Image url="@../images/iron.png" />
          </image>
       </ImageView>
-      <Button fx:id="btnHome" layoutX="534.0" layoutY="16.0" mnemonicParsing="false" onAction="#backHome" text="HOME" />
+      <Button fx:id="btnHome" layoutX="451.0" layoutY="16.0" mnemonicParsing="false" onAction="#backHome" text="HOME" />
       <Text fx:id="time" layoutX="20.0" layoutY="86.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="97.99999759718776" />
    </children>
 </AnchorPane>

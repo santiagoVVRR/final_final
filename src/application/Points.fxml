@@ -15,7 +15,7 @@
                   <Image url="@../images/tierraFondo.png" />
                </image>
             </ImageView>
-            <ListView fx:id="listView" layoutX="360.0" layoutY="22.0" opacity="0.16" prefHeight="364.0" prefWidth="212.0" />
+            <ListView fx:id="listView" layoutX="360.0" layoutY="22.0" prefHeight="364.0" prefWidth="212.0" />
             <Button layoutX="140.0" layoutY="41.0" mnemonicParsing="false" onAction="#byName" text="BY NAME" />
             <Button layoutX="137.0" layoutY="101.0" mnemonicParsing="false" onAction="#byPoints" text="BY POINTS" />
             <Button layoutX="127.0" layoutY="159.0" mnemonicParsing="false" onAction="#byBestGame" text="BY BEST GAME" />
