@@ -145,10 +145,12 @@ public class Field implements Comparable<Field>{
 		return comp;
 	}
 
-	
+	/*
+	 * controla el numero de trampas que se generan
+	 */
 	public void generateTraps() {
 		
-		int numOfPoisons = (int)(Math.random() * 7) + 2;
+		int numOfPoisons = (int)(Math.random() * 5) + 2;
 		
 		for(int i = 0; i < numOfPoisons; i++) {
 			int damage = (int)(Math.random() * 200) + 30;
@@ -159,7 +161,7 @@ public class Field implements Comparable<Field>{
 			traps.add(p);
 		}
 		
-		int numOfEnemys = (int)(Math.random() * 7) + 2;
+		int numOfEnemys = (int)(Math.random() * 5) + 2;
 		
 		for(int i = 0; i < numOfEnemys; i++) {
 			int damage = (int)(Math.random() * 200) + 30;
