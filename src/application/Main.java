@@ -24,7 +24,7 @@ public class Main extends Application {
 			primaryStage.setScene(scene);
 			primaryStage.setTitle("MINECRAFT ICESI MODE");
 			primaryStage.getIcons().add(new Image("/images/logo.png"));
-			primaryStage.setResizable(false);
+			primaryStage.setResizable(true);
 			primaryStage.show();
 		} catch(Exception e) {
 			e.printStackTrace();
