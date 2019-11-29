@@ -173,8 +173,7 @@ public class Character implements Comparable<Character>, Movement{
 		this.right = right;
 	}
 
-
-
+	/*
 	public boolean isDown() {
 		return down;
 	}
@@ -195,7 +194,7 @@ public class Character implements Comparable<Character>, Movement{
 
 	public void setUp(boolean up) {
 		this.up = up;
-	}
+	}*/
 
 
 
