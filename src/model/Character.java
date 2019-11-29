@@ -23,8 +23,8 @@ public class Character implements Comparable<Character>, Movement{
 	private int posy;
 	private boolean left;
 	private boolean right;
-	private boolean down;
-	private boolean up;
+	//private boolean down;
+	//private boolean up;
 	
 	
 	
